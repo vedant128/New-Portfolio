@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { Suspense, useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Island from '../models/island';
@@ -6,12 +6,26 @@ import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 import HomeInfo from '../components/HomeInfo';
-
+import Music from '../assets/music.mp3'
+import { soundoff, soundon } from '../assets/icons';
 
 const Home = () => {
 
+    const audioRef = useRef(new Audio(Music));
+    audioRef.current.volume = 0.4;
+    audioRef.current.loop = true;
+
     const [isRotating, setIsRotating] = useState(false);
     const [currentStage, setCurrentStage] = useState(1);
+    const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+    useEffect(() => {
+        if (isPlayingMusic) {
+            audioRef.current.play();
+        } else {
+            audioRef.current.pause();
+        }
+    }, [isPlayingMusic]);
 
     const adjustIslandForScreenSize = () => {
         let screenScale = null;
@@ -126,6 +140,22 @@ const Home = () => {
                 </Suspense>
 
             </Canvas>
+
+            <div className='absolute bottom-6 left-6'>
+                <button
+                    onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+                    className='w-12 h-12 rounded-full flex items-center justify-center cursor-pointer
+                   bg-white/10 backdrop-blur-md border border-white/20
+                   shadow-lg hover:bg-white/20 hover:scale-110
+                   transition-all duration-300 ease-in-out'
+                >
+                    <img
+                        src={isPlayingMusic ? soundon : soundoff}
+                        alt='sound'
+                        className='w-6 h-6 object-contain'
+                    />
+                </button>
+            </div>
         </section>
     )
 }
