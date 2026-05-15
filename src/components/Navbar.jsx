@@ -1,47 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+    const closeMenu = () => setIsOpen(false);
+
+    const navLinkStyle = ({ isActive }) => ({
+        padding: '8px 20px',
+        borderRadius: '14px',
+        background: isActive ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.08)',
+        backdropFilter: 'blur(12px)',
+        border: '1px solid rgba(255, 255, 255, 0.15)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        transition: 'all 0.3s ease'
+    });
+
     return (
         <header className='header'>
-            <NavLink to='/' className='w-12 h-12 rounded-xl flex items-center justify-center font-bold shadow-lg transition-all duration-300' style={{ background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.18)' }}>
+            <NavLink to='/' onClick={closeMenu} className='w-12 h-12 rounded-xl flex items-center justify-center font-bold shadow-lg transition-all duration-300' style={{ background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.18)' }}>
                 <p className='blue-gradient_text' style={{ fontSize: '1.2rem' }}>VG</p>
             </NavLink>
-            <nav className='flex text-base gap-4 font-semibold'>
-                <NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={({ isActive }) => ({
-                    padding: '8px 20px',
-                    borderRadius: '14px',
-                    background: isActive ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.08)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    transition: 'all 0.3s ease'
-                })}>
+
+            {/* Mobile Menu Button */}
+            <button
+                onClick={toggleMenu}
+                className='sm:hidden w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300'
+                style={{ background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.18)' }}
+            >
+                <div className='flex flex-col gap-1.5'>
+                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
+                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                </div>
+            </button>
+
+            {/* Desktop Navigation */}
+            <nav className='hidden sm:flex text-base gap-4 font-semibold'>
+                <NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={navLinkStyle}>
                     About
                 </NavLink>
-                <NavLink to='/projects' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={({ isActive }) => ({
-                    padding: '8px 20px',
-                    borderRadius: '14px',
-                    background: isActive ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.08)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    transition: 'all 0.3s ease'
-                })}>
+                <NavLink to='/projects' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={navLinkStyle}>
                     Projects
                 </NavLink>
-                <NavLink to='/contact' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={({ isActive }) => ({
-                    padding: '8px 20px',
-                    borderRadius: '14px',
-                    background: isActive ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.08)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    transition: 'all 0.3s ease'
-                })}>
+                <NavLink to='/contact' className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={navLinkStyle}>
                     Contact
                 </NavLink>
             </nav>
+
+            {/* Mobile Navigation Dropdown */}
+            {isOpen && (
+                <nav
+                    className='absolute top-20 right-8 left-8 sm:hidden flex flex-col gap-4 p-6 rounded-2xl animate-in fade-in zoom-in duration-300'
+                    style={{
+                        background: 'rgba(255, 255, 255, 0.12)',
+                        backdropFilter: 'blur(20px)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+                    }}
+                >
+                    <NavLink to='/about' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={navLinkStyle}>
+                        About
+                    </NavLink>
+                    <NavLink to='/projects' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={navLinkStyle}>
+                        Projects
+                    </NavLink>
+                    <NavLink to='/contact' onClick={closeMenu} className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'} style={navLinkStyle}>
+                        Contact
+                    </NavLink>
+                </nav>
+            )}
         </header>
     )
 }

@@ -1,6 +1,5 @@
 import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 import Loader from '../components/Loader';
 import Island from '../models/island';
 import Sky from '../models/Sky';
@@ -103,13 +102,6 @@ const Home = () => {
                         intensity={2}
                     />
 
-                    <OrbitControls
-                        enableZoom={true}
-                        enablePan={false}
-                        target={islandPosition}
-                        onStart={() => setIsRotating(true)}
-                        onEnd={() => setIsRotating(false)}
-                    />
 
                     <Bird />
                     <Sky
