@@ -17,7 +17,7 @@
   --color-light-4: #5C5C7B;
 
   --font-inter: "Inter", sans-serif;
-  
+
   --breakpoint-xs: 480px;
 }
 
@@ -311,4 +311,228 @@
   .shad-button_ghost {
     @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white;
   }
+}
+
+
+
+/* =========================
+PREMIUM GLASS UI=========================*/
+/* HERO TEXT CARD */
+
+@utility hero-text {
+  @apply text-center text-white font-semibold px-8 py-6 rounded-[28px] mx-5;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* HERO SUBTEXT */
+
+@utility hero-subtext {
+  @apply font-medium tracking-wide;
+
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* INFO CARD */
+
+@utility info-box {
+  @apply mx-auto flex flex-col items-center text-center gap-5 px-7 py-5 rounded-[24px] text-white w-[90%] sm:w-[650px];
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16);
+}
+
+/* INFO TEXT */
+
+@utility info-text {
+  @apply font-medium;
+
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* PREMIUM BUTTON */
+
+@utility glass-btn {
+  @apply flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold transition-all duration-300;
+
+  font-size: 0.9rem;
+
+  color: white;
+
+  background: rgba(37, 99, 235, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 4px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* BUTTON HOVER */
+
+.glass-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(37, 99, 235, 0.9);
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 24px 40px;
+  border-radius: 28px;
+
+  width: fit-content;
+  margin: 0 auto;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+
+
+/* =========================
+   PREMIUM HERO CARD
+========================= */
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: fit-content;
+
+  padding: 22px 42px;
+
+  margin: 0 auto;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.16),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+/* MAIN TITLE */
+
+.hero-title {
+  font-size: clamp(2.2rem, 4vw, 4.5rem);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  color: #f8fafc;
+
+  font-family:
+    Inter,
+    SF Pro Display,
+    system-ui,
+    sans-serif;
+
+  text-shadow:
+    0 2px 10px rgba(255, 255, 255, 0.12);
+}
+
+/* NAME */
+
+.name {
+  background: linear-gradient(90deg,
+      #ffffff,
+      #dbeafe,
+      #bfdbfe);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SUBTITLE */
+
+.hero-subtitle {
+  margin-top: 14px;
+
+  font-size: clamp(1rem, 1.3vw, 1.4rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family:
+    Inter,
+    SF Pro Display,
+    system-ui,
+    sans-serif;
+}
+
+/* WAVE EMOJI */
+
+.wave {
+  display: inline-block;
+
+  filter: drop-shadow(0 4px 10px rgba(255, 200, 0, 0.25));
 }
