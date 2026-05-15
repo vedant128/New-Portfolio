@@ -9,7 +9,7 @@ const Footer = () => {
 
             <div className='footer-container'>
                 <p>
-                    © 2025 <strong>Vedant</strong>. All rights reserved.
+                    Built with React, Three.js & creativity by <strong>Vedant</strong>
                 </p>
 
                 <div className='flex gap-3 justify-center items-center'>
