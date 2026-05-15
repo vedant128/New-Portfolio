@@ -21,7 +21,11 @@ import {
     snapgram,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    photoshop,
+    web,
+    phone,
+    graduation
 } from "../assets/icons";
 
 export const skills = [
@@ -119,7 +123,7 @@ export const education = [
     {
         title: "B.E. Information Technology",
         company_name: "Sinhgad College of Engineering, Pune",
-        icon: react,
+        icon: graduation,
         iconBg: "#dbeafe",
         date: "2024 - 2027",
         points: [
@@ -133,7 +137,7 @@ export const education = [
     {
         title: "Diploma in Computer Engineering",
         company_name: "AISSMS Polytechnic, Pune",
-        icon: javascript,
+        icon: graduation,
         iconBg: "#bfdbfe",
         date: "2021 - 2024",
         points: [
@@ -149,7 +153,7 @@ export const experiences = [
     {
         title: "Graphic Design Lead",
         company_name: "GDG SCOE",
-        icon: github,
+        icon: photoshop,
         iconBg: "#cffafe",
         date: "2024 - 2025",
         points: [
@@ -163,7 +167,7 @@ export const experiences = [
     {
         title: "Web Developer Intern",
         company_name: "NinjaBytes Technologies",
-        icon: nodejs,
+        icon: web,
         iconBg: "#e0f2fe",
         date: "Sep 2025 - Feb 2026",
         points: [
@@ -177,7 +181,7 @@ export const experiences = [
     {
         title: "Android Development Intern",
         company_name: "Infeanet Digital Solution and Web Media",
-        icon: mongodb,
+        icon: phone,
         iconBg: "#dbeafe",
         date: "June 2023 - July 2023",
         points: [

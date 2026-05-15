@@ -27,6 +27,10 @@ import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 import aws from './aws.png'
+import photoshop from './photoshop.png'
+import web from './web.png'
+import phone from './phone.png'
+import graduation from './graduation.png'
 
 export {
     css,
@@ -58,4 +62,8 @@ export {
     soundon,
     soundoff,
     aws,
+    photoshop,
+    web,
+    phone,
+    graduation,
 }

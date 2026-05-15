@@ -38,7 +38,7 @@
 
 /* NAVBAR & GRADIENTS */
 .header {
-  @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+  @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto fixed top-4 z-50 right-0 left-0;
 }
 
 .blue-gradient_text {
@@ -277,6 +277,14 @@
   .user-card {
     @apply flex-center flex-col gap-4 border border-dark-4 rounded-[20px] px-5 py-8;
   }
+
+  .footer {
+    @apply max-w-5xl mx-auto sm:px-16 pb-8 px-8 flex flex-col gap-7;
+  }
+
+  .footer-container {
+    @apply flex flex-wrap gap-7 items-center justify-between;
+  }
 }
 
 @layer components {
@@ -325,16 +333,16 @@ PREMIUM GLASS UI=========================*/
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.2;
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
   box-shadow:
-    0 8px 32px rgba(31, 38, 135, 0.25),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
 }
 
 /* HERO SUBTEXT */
@@ -352,16 +360,16 @@ PREMIUM GLASS UI=========================*/
 @utility info-box {
   @apply mx-auto flex flex-col items-center text-center gap-5 px-7 py-5 rounded-[24px] text-white w-[90%] sm:w-[650px];
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.08);
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
   box-shadow:
-    0 8px 32px rgba(31, 38, 135, 0.18),
-    inset 0 1px 1px rgba(255, 255, 255, 0.16);
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
 }
 
 /* INFO TEXT */
@@ -464,10 +472,10 @@ PREMIUM GLASS UI=========================*/
 
   background: rgba(255, 255, 255, 0.08);
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.16),
