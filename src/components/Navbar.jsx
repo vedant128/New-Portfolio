@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import Image from '../public/favicon.png'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = () => {
     return (
         <header className='header'>
             <NavLink to='/' onClick={closeMenu} className='w-12 h-12 rounded-xl flex items-center justify-center font-bold shadow-lg transition-all duration-300' style={{ background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.18)' }}>
-                <img src={'../public/favicon.png'} className='blue-gradient_text' style={{ fontSize: '1.2rem' }} />
+                <img src={Image} className='blue-gradient_text' style={{ fontSize: '1.2rem' }} />
             </NavLink>
 
             {/* Mobile Menu Button */}
