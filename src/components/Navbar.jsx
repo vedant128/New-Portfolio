@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Image from '../public/favicon.png'
+import Image from '../../public/favicon.png'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
