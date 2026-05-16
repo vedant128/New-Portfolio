@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <header className='header'>
             <NavLink to='/' onClick={closeMenu} className='w-12 h-12 rounded-xl flex items-center justify-center font-bold shadow-lg transition-all duration-300' style={{ background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.18)' }}>
-                <p className='blue-gradient_text' style={{ fontSize: '1.2rem' }}>VG</p>
+                <img src={'../public/favicon.png'} className='blue-gradient_text' style={{ fontSize: '1.2rem' }} />
             </NavLink>
 
             {/* Mobile Menu Button */}
